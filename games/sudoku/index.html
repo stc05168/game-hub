@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f5f3ee">
+  <meta name="description" content="A clean, responsive Sudoku game with three difficulty levels, live scoring, accuracy tracking, hints, and undo history.">
+  <title>Sudoku — A quiet number game</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#game-board">Skip to puzzle</a>
+
+  <header class="site-header">
+    <a class="brand" href="../../index.html" aria-label="Return to the game hub">
+      <span class="brand-mark" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+      </span>
+      <span>Sudoku</span>
+    </a>
+
+    <div class="header-actions">
+      <a class="hub-link" href="../../index.html">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 17-5-5 5-5"></path><path d="M5 12h14"></path></svg>
+        All games
+      </a>
+      <button class="icon-button" id="help-button" type="button" aria-label="How to play" title="How to play">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M9.8 9a2.35 2.35 0 0 1 4.53.9c0 1.66-2.33 2.06-2.33 3.6"></path>
+          <path d="M12 17.25h.01"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">DAILY PRACTICE</p>
+      <h1 id="page-title">Find your focus.</h1>
+      <p>Fill every row, column, and box with the numbers 1–9.</p>
+    </section>
+
+    <section class="game" aria-label="Sudoku game">
+      <div class="game-topbar">
+        <div class="difficulty-picker" role="group" aria-label="Difficulty">
+          <button type="button" class="difficulty-button is-active" data-difficulty="easy" aria-pressed="true">Easy</button>
+          <button type="button" class="difficulty-button" data-difficulty="medium" aria-pressed="false">Medium</button>
+          <button type="button" class="difficulty-button" data-difficulty="hard" aria-pressed="false">Hard</button>
+        </div>
+        <button class="new-game-button" id="new-game-button" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 11a8 8 0 1 0-2.34 5.66"></path>
+            <path d="M20 5v6h-6"></path>
+          </svg>
+          New game
+        </button>
+      </div>
+
+      <div class="stats" aria-label="Current game statistics">
+        <div class="stat">
+          <span class="stat-label">TIME</span>
+          <strong id="timer">00:00</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">SCORE</span>
+          <strong id="score">1,000</strong>
+        </div>
+        <div class="stat">
+          <span class="stat-label">ACCURACY</span>
+          <strong id="accuracy">100%</strong>
+        </div>
+      </div>
+
+      <div class="play-area">
+        <div class="board-wrap">
+          <div
+            class="sudoku-board"
+            id="game-board"
+            role="grid"
+            aria-label="Sudoku puzzle"
+            aria-rowcount="9"
+            aria-colcount="9"
+            aria-busy="true"
+          ></div>
+          <div class="board-loader" id="board-loader" role="status">
+            <span class="spinner" aria-hidden="true"></span>
+            <span>Creating your puzzle…</span>
+          </div>
+        </div>
+
+        <aside class="game-controls" aria-label="Game controls">
+          <div class="number-pad" aria-label="Number pad">
+            <button type="button" data-number="1">1<span class="remaining" data-remaining="1">9</span></button>
+            <button type="button" data-number="2">2<span class="remaining" data-remaining="2">9</span></button>
+            <button type="button" data-number="3">3<span class="remaining" data-remaining="3">9</span></button>
+            <button type="button" data-number="4">4<span class="remaining" data-remaining="4">9</span></button>
+            <button type="button" data-number="5">5<span class="remaining" data-remaining="5">9</span></button>
+            <button type="button" data-number="6">6<span class="remaining" data-remaining="6">9</span></button>
+            <button type="button" data-number="7">7<span class="remaining" data-remaining="7">9</span></button>
+            <button type="button" data-number="8">8<span class="remaining" data-remaining="8">9</span></button>
+            <button type="button" data-number="9">9<span class="remaining" data-remaining="9">9</span></button>
+          </div>
+
+          <div class="tool-row">
+            <button class="tool-button" id="undo-button" type="button" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 7-5 5 5 5"></path><path d="M20 17a7 7 0 0 0-7-7H4"></path></svg>
+              <span>Undo</span>
+            </button>
+            <button class="tool-button" id="redo-button" type="button" disabled>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 7 5 5-5 5"></path><path d="M4 17a7 7 0 0 1 7-7h9"></path></svg>
+              <span>Redo</span>
+            </button>
+            <button class="tool-button" id="erase-button" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7.5 18.5-4-4 9.8-9.8a2.1 2.1 0 0 1 3 0l3 3a2.1 2.1 0 0 1 0 3l-7.8 7.8Z"></path><path d="M7.5 18.5H20"></path></svg>
+              <span>Erase</span>
+            </button>
+            <button class="tool-button" id="hint-button" type="button">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M8.5 14.5A6 6 0 1 1 15.5 14c-.95.72-1.5 1.42-1.5 2H10c0-.58-.55-1.08-1.5-1.5Z"></path></svg>
+              <span>Hint <small id="hint-count">3</small></span>
+            </button>
+          </div>
+
+          <p class="keyboard-tip"><kbd>1</kbd>–<kbd>9</kbd> to fill · <kbd>Del</kbd> to erase · Arrow keys to move</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made for slow moments and clear minds.</p>
+  </footer>
+
+  <dialog class="modal" id="help-dialog" aria-labelledby="help-title">
+    <div class="modal-header">
+      <div>
+        <p class="eyebrow">THE BASICS</p>
+        <h2 id="help-title">How to play</h2>
+      </div>
+      <button class="icon-button close-dialog" type="button" aria-label="Close instructions">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+      </button>
+    </div>
+    <div class="modal-content">
+      <p>Complete the grid so every row, column, and 3×3 box contains each number from 1 to 9 exactly once.</p>
+      <ul>
+        <li>Select an empty cell, then use the number pad or your keyboard.</li>
+        <li>Correct moves earn points. Mistakes and hints reduce your score.</li>
+        <li>Accuracy is based on your correct entries compared with all entry attempts.</li>
+        <li>Each generated puzzle has one solution.</li>
+      </ul>
+      <div class="score-guide">
+        <span><strong>+20</strong> correct</span>
+        <span><strong>−50</strong> mistake</span>
+        <span><strong>−100</strong> hint</span>
+        <span><strong>−1</strong> per 10 sec</span>
+      </div>
+    </div>
+    <button class="primary-button close-dialog" type="button">Start playing</button>
+  </dialog>
+
+  <dialog class="modal result-modal" id="result-dialog" aria-labelledby="result-title">
+    <div class="result-mark" aria-hidden="true">✓</div>
+    <p class="eyebrow">PUZZLE COMPLETE</p>
+    <h2 id="result-title">Nicely done.</h2>
+    <p class="result-copy">A clear grid and a sharper mind.</p>
+    <div class="result-stats">
+      <div><span>Time</span><strong id="final-time">00:00</strong></div>
+      <div><span>Score</span><strong id="final-score">0</strong></div>
+      <div><span>Accuracy</span><strong id="final-accuracy">100%</strong></div>
+    </div>
+    <button class="primary-button" id="play-again-button" type="button">Play another puzzle</button>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="sr-only" id="announcer" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
