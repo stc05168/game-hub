@@ -196,16 +196,16 @@ main {
 
 .game-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
 .game-card {
   position: relative;
   display: grid;
-  min-height: 390px;
+  min-height: 410px;
   overflow: hidden;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr;
   color: var(--ink);
   background: rgba(255, 253, 248, 0.9);
   border: 1px solid var(--line);
@@ -225,7 +225,7 @@ main {
 .card-art {
   position: relative;
   display: grid;
-  min-height: 250px;
+  min-height: 205px;
   overflow: hidden;
   place-items: center;
 }
@@ -237,7 +237,8 @@ main {
 
 .card-body {
   display: flex;
-  padding: 30px;
+  min-height: 205px;
+  padding: 25px;
   flex-direction: column;
 }
 
@@ -434,6 +435,10 @@ footer a:hover {
 }
 
 @media (max-width: 900px) {
+  .game-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .game-card {
     grid-template-columns: 1fr;
   }
@@ -582,4 +587,93 @@ footer a:hover {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Additional game card artwork */
+.card-snake .card-art { background: #d9e7d9; }
+.card-mines .card-art { background: #e3e0d8; }
+.card-connect .card-art { background: #d9e4eb; }
+.card-scramble .card-art { background: #eddfd4; }
+.card-simon .card-art { background: #e5dfeb; }
+.card-lights .card-art { background: #eee3bd; }
+.card-rps .card-art { background: #e4ddd5; }
+.card-breakout .card-art { background: #dce6e1; }
+.card-guess .card-art { background: #eadde1; }
+.card-slide .card-art { background: #dbe4dc; }
+.card-math .card-art { background: #eee0bf; }
+.card-color .card-art { background: #dce5ec; }
+
+.mini-art { position: relative; filter: drop-shadow(0 10px 14px rgba(35, 46, 39, .1)); }
+.snake-art { display: flex; align-items: center; transform: rotate(-8deg); }
+.snake-art i { width: 28px; height: 28px; margin-left: -4px; background: var(--green); border-radius: 8px; }
+.snake-art i:first-child { border-radius: 50% 8px 8px 50%; }
+.snake-art b { width: 22px; height: 22px; margin-left: 28px; background: var(--orange); border-radius: 50%; }
+.mines-art { display: grid; width: 150px; height: 150px; padding: 7px; grid-template-columns: repeat(3, 1fr); background: #aeb8af; gap: 3px; border-radius: 9px; transform: rotate(4deg); }
+.mines-art span { display: grid; place-items: center; color: var(--blue); font: 700 1rem ui-monospace, monospace; background: #f5f3ed; border-radius: 4px; }
+.mines-art span:nth-child(3) { color: white; background: var(--orange); }
+.connect-art { display: grid; width: 164px; padding: 10px; grid-template-columns: repeat(4, 1fr); gap: 7px; background: var(--blue); border-radius: 12px; transform: rotate(-3deg); }
+.connect-art i { aspect-ratio: 1; background: #f5f2ea; border-radius: 50%; box-shadow: inset 0 2px 4px rgba(34,48,59,.2); }
+.connect-art i:nth-child(9), .connect-art i:nth-child(10), .connect-art i:nth-child(14) { background: var(--orange); }
+.connect-art i:nth-child(11), .connect-art i:nth-child(15), .connect-art i:nth-child(16) { background: var(--yellow); }
+.letter-art, .guess-art { display: flex; gap: 7px; transform: rotate(3deg); }
+.letter-art span, .guess-art span { display: grid; width: 42px; height: 52px; place-items: center; color: var(--ink); font: 700 1.2rem ui-monospace, monospace; background: var(--surface); border: 1px solid rgba(70,60,50,.14); border-radius: 7px; }
+.letter-art span:nth-child(even) { color: var(--orange); transform: translateY(8px); }
+.simon-art { display: grid; width: 145px; height: 145px; grid-template-columns: repeat(2, 1fr); gap: 7px; transform: rotate(45deg); }
+.simon-art i { border-radius: 17px; background: var(--orange); }.simon-art i:nth-child(2){background:var(--yellow)}.simon-art i:nth-child(3){background:var(--blue)}.simon-art i:nth-child(4){background:var(--green)}
+.lights-art { display: grid; width: 150px; height: 150px; grid-template-columns: repeat(3,1fr); gap: 8px; transform: rotate(-4deg); }
+.lights-art i { background: #c8cec6; border-radius: 8px; }.lights-art i:nth-child(2),.lights-art i:nth-child(4),.lights-art i:nth-child(5),.lights-art i:nth-child(8){background:var(--yellow);box-shadow:0 0 14px rgba(216,168,75,.55)}
+.rps-art { display: flex; gap: 9px; align-items: center; }
+.rps-art span { display: grid; width: 55px; height: 68px; place-items: center; color: var(--ink); font: 1.6rem Georgia, serif; background: var(--surface); border-radius: 10px; transform: rotate(-7deg); }.rps-art span:nth-child(2){transform:translateY(-10px)}.rps-art span:nth-child(3){transform:rotate(7deg)}
+.breakout-art { display: grid; position: relative; width: 180px; grid-template-columns: repeat(3,1fr); gap: 5px; }
+.breakout-art i { height: 22px; background: var(--orange); border-radius: 3px; }.breakout-art i:nth-child(2n){background:var(--yellow)}.breakout-art i:nth-child(3n){background:var(--blue)}.breakout-art b{position:absolute;top:100px;left:83px;width:15px;height:15px;background:var(--ink);border-radius:50%}.breakout-art span{position:absolute;top:139px;left:49px;width:84px;height:9px;background:var(--green);border-radius:5px}
+.guess-art span { width: 38px; background: transparent; border: 0; border-bottom: 2px solid var(--ink); border-radius: 0; }
+.slide-art { display:grid;width:150px;height:150px;padding:7px;grid-template-columns:repeat(3,1fr);gap:5px;background:#aeb9af;border-radius:10px;transform:rotate(3deg)}.slide-art span{display:grid;place-items:center;color:var(--ink);font:700 1rem ui-monospace,monospace;background:var(--surface);border-radius:5px}.slide-art span:empty{background:transparent}
+.math-art { display:flex; flex-direction:column; gap:6px; align-items:center; font:800 2rem ui-monospace,monospace; transform:rotate(-4deg) }.math-art b{color:var(--orange);font-size:1.2rem}
+.color-art { color: var(--orange); font-size: 2.25rem; font-weight: 850; letter-spacing: -.06em; transform: rotate(3deg); }
+
+@media (max-width: 680px) {
+  .mini-art { transform: scale(.78); }
+  .snake-art { transform: scale(.78) rotate(-8deg); }
+  .simon-art { transform: scale(.72) rotate(45deg); }
+}
+
+/* Path and region puzzle artwork */
+.card-neon .card-art { background: #202a2e; }
+.card-currents .card-art { background: #cce1dc; }
+.card-snippets .card-art { background: #e7ddd0; }
+.card-starstruck .card-art { background: #ddd8e8; }
+
+.neon-art { display: grid; width: 170px; grid-template-columns: repeat(4, 1fr); gap: 5px; transform: rotate(-4deg); }
+.neon-art i,
+.neon-art b { display: grid; height: 35px; place-items: center; color: white; font: 700 1rem Georgia, serif; border-radius: 8px; box-shadow: 0 0 12px currentColor; }
+.neon-art i:nth-child(1), .neon-art i:nth-child(2), .neon-art b:nth-child(7) { color: #ef785f; background: #d95d49; }
+.neon-art i:nth-child(3), .neon-art i:nth-child(6), .neon-art b:nth-child(8) { color: #65b99d; background: #43866f; }
+.neon-art i:nth-child(4) { background: #d7a93f; }
+.neon-art i:nth-child(5) { background: #557f9a; }
+
+.currents-art { display: flex; gap: 0; align-items: center; transform: rotate(5deg); }
+.currents-art span,
+.currents-art i { display: grid; width: 32px; height: 32px; place-items: center; color: white; font: 700 .8rem ui-monospace, monospace; background: #4a8178; }
+.currents-art span { border: 3px solid white; border-radius: 50%; box-shadow: 0 0 0 2px #4a8178; }
+.currents-art i { width: 28px; height: 12px; }
+
+.snippets-art { display: grid; width: 160px; height: 140px; grid-template-columns: 1.2fr .8fr; grid-template-rows: .75fr 1.25fr; gap: 5px; transform: rotate(-3deg); }
+.snippets-art span { display: grid; place-items: center; color: var(--ink); font: 800 1rem ui-monospace, monospace; border: 2px solid rgba(23,33,29,.25); border-radius: 6px; }
+.snippets-art span:nth-child(1) { grid-row: 1 / 3; background: #f0c5b5; }
+.snippets-art span:nth-child(2) { background: #c9ded0; }
+.snippets-art span:nth-child(3) { background: #d2ddea; }
+.snippets-art span:nth-child(4) { display: none; }
+
+.starstruck-art { display: grid; width: 150px; height: 150px; grid-template-columns: repeat(3, 1fr); gap: 3px; padding: 5px; background: white; border: 2px solid #4f5c55; transform: rotate(4deg); }
+.starstruck-art i { display: grid; place-items: center; color: #9d4e2f; font: 1.45rem Georgia, serif; background: #f1cabb; }
+.starstruck-art i:nth-child(2), .starstruck-art i:nth-child(6) { background: #cce0d2; }
+.starstruck-art i:nth-child(3), .starstruck-art i:nth-child(7) { background: #d2dfeb; }
+.starstruck-art i:nth-child(4), .starstruck-art i:nth-child(8) { background: #f0dfad; }
+.starstruck-art i:nth-child(5), .starstruck-art i:nth-child(9) { background: #dfd0e5; }
+
+@media (max-width: 680px) {
+  .neon-art { transform: scale(.78) rotate(-4deg); }
+  .currents-art { transform: scale(.78) rotate(5deg); }
+  .snippets-art { transform: scale(.78) rotate(-3deg); }
+  .starstruck-art { transform: scale(.74) rotate(4deg); }
 }

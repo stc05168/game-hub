@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f3f0e8">
-  <meta name="description" content="Pocket Arcade is a collection of calm, thoughtfully designed browser games: Sudoku, Memory Match, Tic-Tac-Toe, and Number Merge.">
-  <title>Pocket Arcade — Small games, clear mind</title>
+  <meta name="description" content="Pocket Arcade is a collection of twenty calm browser games, including original path, region, word, strategy, memory, number, and arcade puzzles.">
+  <title>Pocket Arcade — Twenty small games</title>
   <link rel="stylesheet" href="assets/css/hub.css">
 </head>
 <body>
@@ -13,12 +13,10 @@
 
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="Pocket Arcade home">
-      <span class="brand-mark" aria-hidden="true">
-        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-      </span>
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
       <span>Pocket Arcade</span>
     </a>
-    <span class="header-note">FOUR GAMES · NO DOWNLOADS</span>
+    <span class="header-note">TWENTY GAMES · NO DOWNLOADS</span>
   </header>
 
   <main>
@@ -33,90 +31,113 @@
     <section class="game-section" id="games" aria-labelledby="games-title">
       <div class="section-heading">
         <h2 id="games-title">Choose a game</h2>
-        <p>Progress and best scores stay on this device.</p>
+        <p>Twenty games for memory, logic, words, paths, and quick reflexes.</p>
       </div>
 
       <div class="game-grid">
-        <a class="game-card card-sudoku card-featured" href="games/sudoku/index.html">
-          <div class="card-art" aria-hidden="true">
-            <div class="sudoku-art">
-              <span>8</span><span></span><span>2</span><span>6</span><span>3</span><span></span><span></span><span>1</span><span>9</span>
-            </div>
-            <span class="art-orbit orbit-one"></span>
-            <span class="art-orbit orbit-two"></span>
-          </div>
-          <div class="card-body">
-            <div class="card-topline">
-              <span class="card-number">01</span>
-              <span class="card-tag">LOGIC</span>
-            </div>
-            <h3>Sudoku</h3>
-            <p>Fill every row, column, and box. Fresh puzzles are generated for every difficulty.</p>
-            <span class="play-link">Play Sudoku <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span>
-          </div>
+        <a class="game-card card-sudoku" href="games/sudoku/index.html">
+          <div class="card-art" aria-hidden="true"><div class="sudoku-art"><span>8</span><span></span><span>2</span><span>6</span><span>3</span><span></span><span></span><span>1</span><span>9</span></div><span class="art-orbit orbit-one"></span><span class="art-orbit orbit-two"></span></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">01</span><span class="card-tag">LOGIC</span></div><h3>Sudoku</h3><p>Fill every row, column, and box with a fresh generated puzzle.</p><span class="play-link">Play Sudoku <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
         </a>
 
-        <a class="game-card card-memory" href="games/memory-match/index.html">
-          <div class="card-art" aria-hidden="true">
-            <div class="memory-art">
-              <span class="memory-card back"></span>
-              <span class="memory-card face">✦</span>
-              <span class="memory-card face circle">●</span>
-              <span class="memory-card back"></span>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="card-topline">
-              <span class="card-number">02</span>
-              <span class="card-tag">MEMORY</span>
-            </div>
-            <h3>Memory Match</h3>
-            <p>Turn the cards and find every matching pair in as few moves as possible.</p>
-            <span class="play-link">Play Memory Match <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span>
-          </div>
+        <a class="game-card card-memory" href="games/play.html?game=memory-match">
+          <div class="card-art" aria-hidden="true"><div class="memory-art"><span class="memory-card back"></span><span class="memory-card face">✦</span><span class="memory-card face circle">●</span><span class="memory-card back"></span></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">02</span><span class="card-tag">MEMORY</span></div><h3>Memory Match</h3><p>Turn the cards and find every matching pair in as few moves as possible.</p><span class="play-link">Play Memory Match <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
         </a>
 
-        <a class="game-card card-tic" href="games/tic-tac-toe/index.html">
-          <div class="card-art" aria-hidden="true">
-            <div class="tic-art">
-              <span>×</span><span></span><span>○</span><span></span><span>×</span><span></span><span>○</span><span></span><span>×</span>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="card-topline">
-              <span class="card-number">03</span>
-              <span class="card-tag">STRATEGY</span>
-            </div>
-            <h3>Tic-Tac-Toe</h3>
-            <p>Take on a clever computer opponent across three levels of difficulty.</p>
-            <span class="play-link">Play Tic-Tac-Toe <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span>
-          </div>
+        <a class="game-card card-tic" href="games/play.html?game=tic-tac-toe">
+          <div class="card-art" aria-hidden="true"><div class="tic-art"><span>×</span><span></span><span>○</span><span></span><span>×</span><span></span><span>○</span><span></span><span>×</span></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">03</span><span class="card-tag">STRATEGY</span></div><h3>Tic-Tac-Toe</h3><p>Take on a computer opponent across three levels of difficulty.</p><span class="play-link">Play Tic-Tac-Toe <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
         </a>
 
-        <a class="game-card card-merge" href="games/number-merge/index.html">
-          <div class="card-art" aria-hidden="true">
-            <div class="merge-art">
-              <span>2</span><span>4</span><span>8</span><span>16</span>
-            </div>
-          </div>
-          <div class="card-body">
-            <div class="card-topline">
-              <span class="card-number">04</span>
-              <span class="card-tag">NUMBERS</span>
-            </div>
-            <h3>Number Merge</h3>
-            <p>Slide matching tiles together, build your score, and reach the elusive 2048.</p>
-            <span class="play-link">Play Number Merge <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span>
-          </div>
+        <a class="game-card card-merge" href="games/play.html?game=number-merge">
+          <div class="card-art" aria-hidden="true"><div class="merge-art"><span>2</span><span>4</span><span>8</span><span>16</span></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">04</span><span class="card-tag">NUMBERS</span></div><h3>Number Merge</h3><p>Slide matching tiles together and work your way toward 2048.</p><span class="play-link">Play Number Merge <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-snake" href="games/play.html?game=snake">
+          <div class="card-art" aria-hidden="true"><div class="mini-art snake-art"><i></i><i></i><i></i><i></i><b></b></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">05</span><span class="card-tag">ARCADE</span></div><h3>Snake</h3><p>Collect fruit, grow your trail, and keep a clear path ahead.</p><span class="play-link">Play Snake <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-mines" href="games/play.html?game=minesweeper">
+          <div class="card-art" aria-hidden="true"><div class="mini-art mines-art"><span>1</span><span>2</span><span>×</span><span></span><span>2</span><span>1</span><span>1</span><span></span><span></span></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">06</span><span class="card-tag">LOGIC</span></div><h3>Minesweeper</h3><p>Read the clues and clear the field without touching a mine.</p><span class="play-link">Play Minesweeper <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-connect" href="games/play.html?game=connect-four">
+          <div class="card-art" aria-hidden="true"><div class="mini-art connect-art"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">07</span><span class="card-tag">STRATEGY</span></div><h3>Connect Four</h3><p>Drop your pieces and complete a line before the computer.</p><span class="play-link">Play Connect Four <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-scramble" href="games/play.html?game=word-scramble">
+          <div class="card-art" aria-hidden="true"><div class="mini-art letter-art"><span>R</span><span>T</span><span>A</span><span>E</span></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">08</span><span class="card-tag">WORDS</span></div><h3>Word Scramble</h3><p>Rearrange the letters and solve ten clue-backed words.</p><span class="play-link">Play Word Scramble <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-simon" href="games/play.html?game=simon-sequence">
+          <div class="card-art" aria-hidden="true"><div class="mini-art simon-art"><i></i><i></i><i></i><i></i></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">09</span><span class="card-tag">MEMORY</span></div><h3>Simon Sequence</h3><p>Watch the pattern grow, then repeat every light in order.</p><span class="play-link">Play Simon Sequence <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-lights" href="games/play.html?game=lights-out">
+          <div class="card-art" aria-hidden="true"><div class="mini-art lights-art"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">10</span><span class="card-tag">LOGIC</span></div><h3>Lights Out</h3><p>Toggle each cluster until every light on the board is quiet.</p><span class="play-link">Play Lights Out <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-rps" href="games/play.html?game=rock-paper-scissors">
+          <div class="card-art" aria-hidden="true"><div class="mini-art rps-art"><span>●</span><span>▰</span><span>✂</span></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">11</span><span class="card-tag">QUICK PLAY</span></div><h3>Rock Paper Scissors</h3><p>Choose your hand and race the computer to five wins.</p><span class="play-link">Play RPS <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-breakout" href="games/play.html?game=breakout">
+          <div class="card-art" aria-hidden="true"><div class="mini-art breakout-art"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b></b><span></span></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">12</span><span class="card-tag">ARCADE</span></div><h3>Breakout</h3><p>Keep the ball in play and clear the wall one brick at a time.</p><span class="play-link">Play Breakout <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-guess" href="games/play.html?game=word-guess">
+          <div class="card-art" aria-hidden="true"><div class="mini-art guess-art"><span>_</span><span>A</span><span>_</span><span>E</span></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">13</span><span class="card-tag">WORDS</span></div><h3>Word Guess</h3><p>Use the clue and reveal the hidden word within six misses.</p><span class="play-link">Play Word Guess <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-slide" href="games/play.html?game=sliding-puzzle">
+          <div class="card-art" aria-hidden="true"><div class="mini-art slide-art"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span></span><span>8</span></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">14</span><span class="card-tag">PUZZLE</span></div><h3>Sliding Puzzle</h3><p>Move the numbered tiles until all fifteen return to order.</p><span class="play-link">Play Sliding Puzzle <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-math" href="games/play.html?game=math-sprint">
+          <div class="card-art" aria-hidden="true"><div class="mini-art math-art"><span>7 × 8</span><b>= ?</b></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">15</span><span class="card-tag">NUMBERS</span></div><h3>Math Sprint</h3><p>Solve ten quick questions and race against your best time.</p><span class="play-link">Play Math Sprint <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-color" href="games/play.html?game=color-match">
+          <div class="card-art" aria-hidden="true"><div class="mini-art color-art">BLUE</div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">16</span><span class="card-tag">FOCUS</span></div><h3>Color Match</h3><p>Ignore the written word and identify the color of its ink.</p><span class="play-link">Play Color Match <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-neon" href="games/play.html?game=neon">
+          <div class="card-art" aria-hidden="true"><div class="mini-art neon-art"><i></i><i></i><i></i><i></i><i></i><i></i><b>◆</b><b>◆</b></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">17</span><span class="card-tag">LOGIC</span></div><h3>Neon</h3><p>Connect every matching signal without crossing paths or leaving gaps.</p><span class="play-link">Play Neon <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-currents" href="games/play.html?game=currents">
+          <div class="card-art" aria-hidden="true"><div class="mini-art currents-art"><span>1</span><i></i><i></i><span>2</span><i></i><span>3</span></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">18</span><span class="card-tag">PATHS</span></div><h3>Currents</h3><p>Trace one unbroken path through every cell and numbered gate.</p><span class="play-link">Play Currents <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-snippets" href="games/play.html?game=snippets">
+          <div class="card-art" aria-hidden="true"><div class="mini-art snippets-art"><span>6</span><span>4</span><span>2</span><span>8</span></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">19</span><span class="card-tag">LOGIC</span></div><h3>Snippets</h3><p>Partition the grid into rectangles that match their area clues.</p><span class="play-link">Play Snippets <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
+        </a>
+
+        <a class="game-card card-starstruck" href="games/play.html?game=starstruck">
+          <div class="card-art" aria-hidden="true"><div class="mini-art starstruck-art"><i></i><i>★</i><i></i><i></i><i></i><i>★</i><i>★</i><i></i><i></i></div></div>
+          <div class="card-body"><div class="card-topline"><span class="card-number">20</span><span class="card-tag">STRATEGY</span></div><h3>Starstruck</h3><p>Place stars across every row, column, and colored region.</p><span class="play-link">Play Starstruck <svg viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"></path></svg></span></div>
         </a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <span>Pocket Arcade</span>
-    <p>Made for slow moments and clear minds.</p>
-    <a href="#hero-title">Back to top ↑</a>
-  </footer>
+  <footer><span>Pocket Arcade</span><p>Made for slow moments and clear minds.</p><a href="#hero-title">Back to top ↑</a></footer>
 </body>
 </html>

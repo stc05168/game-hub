@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f4f1ea">
+  <meta name="description" content="Play a free Pocket Arcade browser game.">
+  <title>Pocket Arcade — Play</title>
+  <link rel="stylesheet" href="../assets/css/arcade.css">
+  <script src="../assets/js/arcade.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#game-root">Skip to game</a>
+
+  <header class="site-header">
+    <a class="brand" href="../index.html" aria-label="Pocket Arcade home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+      <span>Pocket Arcade</span>
+    </a>
+    <a class="hub-link" href="../index.html">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 17-5-5 5-5"></path><path d="M5 12h14"></path></svg>
+      All games
+    </a>
+  </header>
+
+  <main class="app-shell">
+    <section class="intro" aria-labelledby="game-title">
+      <p class="eyebrow" id="game-category">POCKET ARCADE</p>
+      <h1 id="game-title">Loading game…</h1>
+      <p id="game-description">Preparing your next small challenge.</p>
+    </section>
+
+    <section class="game-panel" aria-labelledby="game-title">
+      <div class="game-toolbar" id="game-toolbar" aria-label="Game status"></div>
+      <div class="game-layout">
+        <div class="game-stage" id="game-root" tabindex="-1"></div>
+        <aside class="game-sidebar">
+          <div class="sidebar-section">
+            <p class="sidebar-label">HOW TO PLAY</p>
+            <div class="instructions" id="game-instructions"></div>
+          </div>
+          <div class="sidebar-section controls-section">
+            <p class="sidebar-label">CONTROLS</p>
+            <div class="game-controls" id="game-controls"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>Made for slow moments and clear minds.</p></footer>
+
+  <dialog class="result-dialog" id="result-dialog" aria-labelledby="result-title">
+    <div class="result-mark" id="result-mark" aria-hidden="true">✓</div>
+    <p class="eyebrow" id="result-label">ROUND COMPLETE</p>
+    <h2 id="result-title">Nicely done.</h2>
+    <p class="result-message" id="result-message"></p>
+    <div class="result-stats" id="result-stats"></div>
+    <div class="result-actions" id="result-actions"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="sr-only" id="announcer" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
